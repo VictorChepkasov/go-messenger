@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package messenger;
+
+option go_package = "./messenger";
+
+message Empty {}
+
+// The message structure.
+message Message {
+  string sender = 1;
+  string content = 2;
+}
+
+// The service definition.
+service Messenger {
+  rpc SendMessage(Message) returns (Message);
+  rpc ReceiveMessages(Empty) returns (stream Message);
+}
