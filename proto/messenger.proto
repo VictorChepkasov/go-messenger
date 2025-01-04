@@ -4,7 +4,7 @@ package messenger;
 
 option go_package = "./messenger";
 
-message Empty {}
+import "google/protobuf/empty.proto";  // Add this line
 
 // The message structure.
 message Message {
@@ -15,5 +15,5 @@ message Message {
 // The service definition.
 service Messenger {
   rpc SendMessage(Message) returns (Message);
-  rpc ReceiveMessages(Empty) returns (stream Message);
+  rpc ReceiveMessages(google.protobuf.Empty) returns (stream Message);
 }
