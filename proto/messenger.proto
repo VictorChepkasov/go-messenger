@@ -2,7 +2,8 @@ syntax = "proto3";
 
 package messenger;
 
-import "google/protobuf/empty.proto";
+option go_package = "/internal/gen";
+
 import "google/protobuf/timestamp.proto";
 
 message User {
